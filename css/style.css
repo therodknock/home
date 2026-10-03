@@ -1,0 +1,67 @@
+:root{--bg:#f1f2f3;--bg2:#e4e6e8;--line:#c3c7cb;--mute:#6a7076;--ink:#1d2023;--inv:#f1f2f3;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17191b;--bg2:#222528;--line:#3a3e42;--mute:#9aa0a6;--ink:#e8eaec;--inv:#17191b}}
+:root[data-theme="dark"]{--bg:#17191b;--bg2:#222528;--line:#3a3e42;--mute:#9aa0a6;--ink:#e8eaec;--inv:#17191b}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Libre Franklin",system-ui,Arial,sans-serif}
+h1,h2,h3{font-family:Newsreader,Georgia,"Times New Roman",serif;font-weight:500;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+header{border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{display:flex;align-items:center;line-height:0;border:0;background:none;padding:0}
+.logo img{display:block;width:44px;height:44px;object-fit:contain}
+nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+nav a{text-decoration:none;display:inline-block;color:var(--mute);font:500 14px "Libre Franklin",sans-serif;padding:8px 12px;cursor:pointer;border-bottom:2px solid transparent}
+nav a:hover{color:var(--ink)}
+nav a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--ink)}
+.hero{padding:96px 0 72px;border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(52px,12vw,152px);letter-spacing:.04em;font-weight:600;line-height:.95}
+.hero p{max-width:56ch;font-size:19px;color:var(--mute);margin:32px 0 0}
+.hero .sub{text-decoration:none;display:inline-block;margin-top:36px;padding:12px 22px;background:var(--ink);color:var(--inv);border:0;font:500 15px "Libre Franklin",sans-serif;cursor:pointer}
+.hero .sub:hover{opacity:.85}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line)}
+.stats div{padding:32px 24px 32px 0;border-right:1px solid var(--line)}
+.stats div+div{padding-left:24px}.stats div:last-child{border-right:0}
+.stats b{display:block;font:500 40px Newsreader,Georgia,serif}
+.stats span{color:var(--mute);font-size:14px}
+section.blk{padding:72px 0;border-bottom:1px solid var(--line)}
+.split{display:grid;grid-template-columns:1fr 2fr;gap:48px}
+.split h2{font-size:34px}
+.split p{margin:0 0 16px;max-width:64ch}
+.idx{border-top:1px solid var(--ink)}
+.row{display:grid;grid-template-columns:200px 1fr 140px;gap:24px;padding:24px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.row h3{font-size:26px}
+.row p{margin:0;color:var(--mute);max-width:60ch}
+.row small{color:var(--mute);text-align:right;font-size:14px}
+.page-h{padding:72px 0 40px}
+.page-h h1{font-size:clamp(40px,7vw,72px)}
+.page-h p{color:var(--mute);max-width:60ch;font-size:18px;margin:20px 0 0}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink)}
+.cols article{padding:28px 28px 28px 0;border-right:1px solid var(--line)}
+.cols article+article{padding-left:28px}.cols article:last-child{border-right:0}
+.cols h3{font-size:24px;margin-bottom:10px}
+.cols p{margin:0;color:var(--mute)}
+.plate{background:var(--bg2);border:1px solid var(--line);padding:32px;margin-top:48px}
+.plate h3{font-size:24px;margin-bottom:8px}.plate p{margin:0;max-width:64ch;color:var(--mute)}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding-bottom:80px}
+label{display:block;font-size:14px;font-weight:500;margin:0 0 6px}
+input,textarea,select{width:100%;background:var(--bg);color:var(--ink);border:1px solid var(--line);padding:11px 12px;font:inherit;margin-bottom:18px;border-radius:0}
+textarea{min-height:130px;resize:vertical}
+.btn{padding:12px 22px;background:var(--ink);color:var(--inv);border:0;font:500 15px "Libre Franklin",sans-serif;cursor:pointer}
+.ok{display:none;margin-top:16px;padding:12px;border:1px solid var(--ink)}
+dl{margin:0}dt{font-weight:600}dd{margin:0 0 20px;color:var(--mute)}
+footer{padding:40px 0;color:var(--mute);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media (max-width:820px){
+.split,.contact{grid-template-columns:1fr;gap:24px}
+.row{grid-template-columns:1fr;gap:6px}.row small{text-align:left}
+.cols{grid-template-columns:1fr}.cols article,.cols article+article{padding:24px 0;border-right:0;border-bottom:1px solid var(--line)}
+.stats{grid-template-columns:1fr}.stats div,.stats div+div{padding:20px 0;border-right:0;border-bottom:1px solid var(--line)}
+.bar{height:auto;padding:12px 0;flex-direction:column;align-items:flex-start}
+nav{justify-content:flex-start;margin-left:-12px}
+.hero{padding:56px 0 48px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
